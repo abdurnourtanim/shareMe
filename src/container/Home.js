@@ -44,7 +44,7 @@ const Home = () => {
           <Link to="/">
             <img src={logo} className="w-28" alt="logo" />
           </Link>
-          <Link to={`user-profile${user?._id}`}>
+          <Link to={`profile${user?._id}`}>
             <img src={user?.image} className="w-28" alt="logo" />
           </Link>
         </div>
