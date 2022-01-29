@@ -36,7 +36,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
       ])
       .commit()
       .then(() => {
-        window.location.reload();
+        alert("Save pin successful");
         setSavingPost(false);
       });
   };
@@ -44,7 +44,8 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   // delete pin
   const deletePin = (id) => {
     client.delete(id).then(() => {
-      window.location.reload();
+      // window.location.reload();
+      alert("Delete pin successful");
     });
   };
 
