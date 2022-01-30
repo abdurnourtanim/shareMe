@@ -71,10 +71,10 @@ const Profile = () => {
             <img
               src={randomImage}
               alt="user-pic"
-              className=" w-full h-370 2xl:h-510 shadow-lg object-cover"
+              className=" w-full h-50 2xl:h-510 shadow-lg object-cover"
             />
             <img
-              className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
+              className="rounded-full w-50 h-50 -mt-10 shadow-xl object-cover"
               src={user.image}
               alt="user-pic"
             />
