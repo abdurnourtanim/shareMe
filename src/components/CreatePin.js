@@ -141,7 +141,7 @@ const CreatePin = ({ user }) => {
             <div className="flex gap-2 mt-2 mb-2 items-center bg-white rounded-lg">
               <img
                 src={user.image}
-                className="w-10 h-10 rounded-full"
+                className="rounded-full w-10 h-10 "
                 alt="user-profile"
               />
               <p className="font-bold">{user.userName}</p>
@@ -190,7 +190,7 @@ const CreatePin = ({ user }) => {
                 onClick={savePin}
                 className="bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none"
               >
-                Save Pin
+                Create Post
               </button>
             </div>
           </div>

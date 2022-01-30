@@ -28,6 +28,8 @@ const Profile = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
 
+  const googleId = JSON.parse(localStorage.getItem("user")).googleId;
+
   useEffect(() => {
     const query = userQuery(userId);
 
@@ -81,7 +83,7 @@ const Profile = () => {
             {user.userName}
           </h1>
           <div className="absolute top-0 z-1 right-0 p-2">
-            {userId === user._id && (
+            {googleId === user._id ? (
               <GoogleLogout
                 clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
                 render={(renderProps) => (
@@ -97,7 +99,7 @@ const Profile = () => {
                 onLogoutSuccess={logout}
                 cookiePolicy="single_host_origin"
               />
-            )}
+            ) : null}
           </div>
         </div>
         <div className="text-center mb-7">
