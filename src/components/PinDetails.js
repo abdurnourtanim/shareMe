@@ -15,11 +15,11 @@ const PinDetails = ({ user }) => {
 
   const { pinId } = useParams();
 
-  const fetchPinDetails = () => {
+  const fetchPinDetails = async () => {
     const query1 = pinDetailQuery(pinId);
 
     if (query1) {
-      client.fetch(query1).then((data) => {
+      await client.fetch(query1).then((data) => {
         setPinDetail(data[0]);
 
         if (data[0]) {
@@ -35,6 +35,7 @@ const PinDetails = ({ user }) => {
 
   useEffect(() => {
     fetchPinDetails();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinId]);
 
@@ -100,7 +101,7 @@ const PinDetails = ({ user }) => {
             <p className="mt-3">{pinDetail.about}</p>
           </div>
           <Link
-            to={`profile/${pinDetail.postedBy?._id}`}
+            to={`/profile/${pinDetail.postedBy?._id}`}
             className="flex gap-2 mt-5 items-center bg-white rounded-lg"
           >
             <img
@@ -119,20 +120,22 @@ const PinDetails = ({ user }) => {
                 className="flex gap-2 mt-5 items-center bg-white rounded-lg"
                 key={i}
               >
-                <img
-                  src={item.postedBy?.image}
-                  className="w-10 h-10 rounded-full cursor-pointer"
-                  alt="user-profile"
-                />
-                <div className="flex flex-col">
-                  <p className="font-bold">{item.postedBy?.userName}</p>
-                  <p>{item.comment}</p>
-                </div>
+                <Link to={`/profile/${item?.postedBy?._id}`}>
+                  <img
+                    src={item.postedBy?.image}
+                    className="w-10 h-10 rounded-full cursor-pointer"
+                    alt="user-profile"
+                  />
+                  <div className="flex flex-col">
+                    <p className="font-bold">{item.postedBy?.userName}</p>
+                    <p>{item.comment}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap mt-6 gap-3">
-            <Link to={`profile/${pinDetail.postedBy?._id}`}>
+            <Link to={`/profile/${pinDetail.postedBy?._id}`}>
               <img
                 src={pinDetail.postedBy?.image}
                 className="w-10 h-10 rounded-full cursor-pointer"
