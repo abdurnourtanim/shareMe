@@ -125,7 +125,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
         )}
       </div>
       <Link
-        to={`profile/${postedBy?._id}`}
+        to={`/profile/${postedBy?._id}`}
         className="flex gap-2 mt-2 items-center"
       >
         <img
