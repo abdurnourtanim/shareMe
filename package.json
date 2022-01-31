@@ -2,6 +2,12 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Abdur Nour Tanim",
+    "github": "https://github.com/antanim/",
+    "facebook": "https://facebook.com/abdurnourtanim.me/"
+  },
+  "repository": "https://github.com/antanim/shareMe/",
   "dependencies": {
     "@sanity/client": "^2.23.2",
     "@sanity/image-url": "^1.0.1",
